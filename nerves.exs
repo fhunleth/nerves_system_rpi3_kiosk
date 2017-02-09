@@ -5,18 +5,18 @@ version =
   |> File.read!
   |> String.strip
 
-pkg = :nerves_system_rpi3
+pkg = :nerves_system_rpi3_kiosk
 
 config pkg, :nerves_env,
-  type: :system,
+  type:  :system,
   version: version,
   compiler: :nerves_package,
   artifact_url: [
-    "https://github.com/nerves-project/#{pkg}/releases/download/v#{version}/#{pkg}-v#{version}.tar.gz",
+    "https://github.com/nerves-project/#{pkg}/releases/download/v#{version}/#{pkg}-v#{version}.tar.gz"
   ],
   platform: Nerves.System.BR,
   platform_config: [
-    defconfig: "nerves_defconfig",
+    defconfig: "nerves_defconfig"
   ],
   checksum: [
     "nerves_defconfig",

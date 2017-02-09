@@ -1,5 +1,15 @@
-# Raspberry Pi 3 Model B
-[![Build Status](https://travis-ci.org/nerves-project/nerves_system_rpi3.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_rpi3)
+# Raspberry Pi 3 Kiosk
+
+# Very rough port!
+
+This is a quick mod to the Nerves RPi3 system to make it start up
+a webbrowser so that it's possible to use as a kiosk.
+
+To try it out, build the system and write it to a MicroSD card. It
+will boot to an Erlang prompt over the UART pins. From there, break
+out of Erlang (CTRL-C, CTRL-C) and run `qt-webkit-kiosk -c /etc/qt-webkit-kiosk.ini`.
+
+# To be updated...
 
 This is the base Nerves System configuration for the Raspberry Pi 3 Model B.
 

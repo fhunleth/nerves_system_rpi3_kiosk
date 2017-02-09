@@ -1,4 +1,4 @@
-defmodule NervesSystemRpi3.Mixfile do
+defmodule NervesSystemRpi3Kiosk.Mixfile do
   use Mix.Project
 
   @version Path.join(__DIR__, "VERSION")
@@ -6,7 +6,7 @@ defmodule NervesSystemRpi3.Mixfile do
     |> String.strip
 
   def project do
-    [app: :nerves_system_rpi3,
+    [app: :nerves_system_rpi3_kiosk,
      version: @version,
      elixir: "~> 1.3",
      compilers: Mix.compilers ++ [:nerves_package],
@@ -17,26 +17,26 @@ defmodule NervesSystemRpi3.Mixfile do
   end
 
   def application do
-   []
+    []
   end
 
   defp deps do
     [{:nerves, "~> 0.4.0"},
      {:nerves_system_br, "~> 0.9.2"},
-     #{:nerves_system_br, github: "nerves-project/nerves_system_br", branch: "rpi-updates"},
+     #{:nerves_system_br, github: "nerves-project/nerves_system_br", branch: "br-2016.11.1-bump"},
      {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 0.9.0"}]
   end
 
   defp description do
-   """
-   Nerves System - Raspberry Pi 3 B
-   """
+    """
+    Nerves System - Raspberry Pi 3 B Kiosk
+    """
   end
 
   defp package do
-   [maintainers: ["Frank Hunleth", "Justin Schneck"],
+    [maintainers: ["Frank Hunleth", "Justin Schneck"],
     files: ["LICENSE", "mix.exs", "nerves_defconfig", "nerves.exs", "README.md", "VERSION", "rootfs-additions", "fwup.conf", "cmdline.txt", "linux-4.4.defconfig", "config.txt", "post-createfs.sh"],
-    licenses: ["Apache 2.0"],
+     licenses: ["Apache 2.0"],
     links: %{"Github" => "https://github.com/nerves-project/nerves_system_rpi3"}]
   end
 end
